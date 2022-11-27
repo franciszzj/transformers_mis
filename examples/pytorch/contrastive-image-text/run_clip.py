@@ -207,6 +207,7 @@ class Transform(torch.nn.Module):
         )
 
     def forward(self, x) -> torch.Tensor:
+        """`x` should be an instance of `PIL.Image.Image`"""
         with torch.no_grad():
             x = self.transforms(x)
         return x
